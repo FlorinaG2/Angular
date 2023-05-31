@@ -1,0 +1,15 @@
+h3 {
+  color: blueviolet;
+}
+h5:hover {
+  background-color: deepskyblue;
+  background-position-x: center;
+  color:red;
+
+}
+h6:hover {
+  background-color:yellowgreen;
+  background-position-x: center;
+  color:black;
+
+}

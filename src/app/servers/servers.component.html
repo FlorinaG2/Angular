@@ -1,0 +1,32 @@
+
+<label>Server name</label>
+<!--<input type="text"-->
+<!--class="form"-->
+<!--(input) = "onUpdateServerName($event)">-->
+<!--<p>{{serverName}}</p>-->
+
+<input type="text"
+       class="form"
+       [(ngModel)] = "serverName">
+
+<!--<p>{{serverName}}</p>-->
+<button class = "btn btn-primary"
+        [disabled] = "!allowingPushButton"
+        (click) ="onCreateServer()">Add Server</button> <!--update dynamically -->
+<!--event binding (click)-->
+<!--<p [innerText]="allowingPushButton"></p>-->
+<p>{{serverCreationStatus}}</p>
+<app-server></app-server>
+<app-server></app-server>
+
+          <!--Ex2-->
+
+  <label>Update</label>
+<button class = "second-button"
+        (click) ="onNotEmpty()">Add Username</button> <!--update dynamically -->
+  <input type="text"
+         class="form"
+         [(ngModel)] = "userName">
+<p>{{userName}}</p>
+
+

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {timestamp} from "rxjs";
 
 @Component({
   selector: 'app-servers',
@@ -11,6 +12,11 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No server was created';
   serverName = "TestServer";
   userName = " Florina";
+  serverCreated = false;
+  servers = ['Testserver', 'Testserver 2'];
+  showDetails = false;
+  buttonClicks: any[] = [];
+
 
   constructor() {
     setTimeout(() => {
@@ -22,6 +28,8 @@ export class ServersComponent implements OnInit {
   }
 sss
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created!' + ' ' + 'Name is ' + this.serverName;
   }
 
@@ -36,8 +44,16 @@ sss
   onNotEmpty(): boolean {
     return this.userName.trim().length == 0;
   }
+  toggleDetails(): void
+  {
+    const timestamp = new Date().toLocaleString();
+    this.buttonClicks.push({timestamp});
+    this.showDetails = !this.showDetails;
+  }
 
   userEmpty() {
     this.userName = "";
   }
+
+  protected readonly onpageshow = onpageshow;
 }
